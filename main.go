@@ -10,7 +10,7 @@ import (
 
 func main() {
 	logger := log.New(os.Stderr, "[LOG]", log.LstdFlags)
-	baseURL, err := url.Parse("http://localhost:8000/hoge")
+	baseURL, err := url.Parse("http://checkip.amazonaws.com/")
 
 	if err != nil {
 		panic("error")
