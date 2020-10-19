@@ -1,10 +1,11 @@
 package client
 
 import (
-	"fmt"
 	"log"
 	"net/http"
 	"net/url"
+
+	"github.com/fatih/color"
 
 	"gowp/request"
 	"gowp/response"
@@ -19,9 +20,10 @@ type ApiClient struct {
 func (c *ApiClient) Run() {
 	request := &request.Request{}
 
-	fmt.Println(c.BaseUrl.String())
+	notice := color.New(color.Bold, color.FgGreen).PrintlnFunc()
+	notice(c.BaseUrl.String())
 
 	response := &response.Response{}
 
-	fmt.Println(request, response)
+	notice(request, response)
 }
