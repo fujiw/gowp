@@ -1,7 +1,7 @@
 package main
 
 import (
-	"gowp/client"
+	"github.com/fujiw/gowp/client"
 	"log"
 	"net/http"
 	"net/url"

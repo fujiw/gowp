@@ -8,6 +8,12 @@
   version = "v1.9.0"
 
 [[projects]]
+  branch = "main"
+  name = "github.com/fujiw/gowp"
+  packages = ["client"]
+  revision = "ba16b064e43081a842f288b6956d0586b873caa8"
+
+[[projects]]
   name = "github.com/mattn/go-colorable"
   packages = ["."]
   revision = "2e1b0c1546e0173c0907cf05c67b8ba29ed8b4d1"
@@ -28,6 +34,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "5d35e0b3f5c48301f993a70e852697971ff41cb1b234b326b9657e80a170747b"
+  inputs-digest = "3fb1fb025bf38908634f764664c02b71845c4d85224395601c1b5b0d7233f1f1"
   solver-name = "gps-cdcl"
   solver-version = 1

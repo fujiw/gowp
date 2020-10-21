@@ -1,14 +1,12 @@
 package client
 
 import (
+	"io/ioutil"
 	"log"
 	"net/http"
 	"net/url"
 
 	"github.com/fatih/color"
-
-	"gowp/request"
-	"gowp/response"
 )
 
 type ApiClient struct {
@@ -18,12 +16,21 @@ type ApiClient struct {
 }
 
 func (c *ApiClient) Run() {
-	request := &request.Request{}
-
 	notice := color.New(color.Bold, color.FgGreen).PrintlnFunc()
 	notice(c.BaseUrl.String())
 
-	response := &response.Response{}
+	req, err := http.NewRequest(http.MethodGet, c.BaseUrl.String(), nil)
+	if err != nil {
+		log.Fatal(err)
+	}
 
-	notice(request, response)
+	resp, err := c.HTTPClient.Do(req)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	notice(resp.StatusCode)
+
+	body, _ := ioutil.ReadAll(resp.Body)
+	notice(string(body))
 }
