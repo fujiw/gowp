@@ -1,7 +1,8 @@
 package main
 
 import (
-	"github.com/fujiw/gowp/client"
+	"gowp/client"
+	"gowp/utils"
 	"log"
 	"net/http"
 	"net/url"
@@ -9,6 +10,7 @@ import (
 )
 
 func main() {
+	utils.Test()
 	logger := log.New(os.Stderr, "[LOG]", log.LstdFlags)
 	baseURL, err := url.Parse("http://checkip.amazonaws.com/")
 
